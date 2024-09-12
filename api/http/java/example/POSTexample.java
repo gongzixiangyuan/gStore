@@ -47,9 +47,6 @@ public class POSTexample{
         res = gc.query("lubm", "json", sparql, "POST");
         System.out.println(res);
 
-		// query and save the result in a file
-        gc.fquery("lubm", "json", sparql, filename, "POST");
-
         // save the database if you have changed the database
 		res = gc.checkpoint("lubm", "POST");
 		System.out.println(res);

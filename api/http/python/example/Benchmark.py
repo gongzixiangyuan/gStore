@@ -75,12 +75,6 @@ def Mythread(rnum, sparql, filename, RequestType):
     gc = GstoreConnector.GstoreConnector(IP, Port, username, password, http_type=httpType)
     res = gc.query("lubm", "json", sparql, RequestType)
 
-    # fquery
-    #gc = GstoreConnector.GstoreConnector(IP, Port, username, password)
-    #gc.fquery("lubm", "json", sparql, filename, RequestType)
-    #with open(filename, "r") as f:
-    #    res = f.read()
-
     # count the nums
     m = 0
     for i in range(len(sparql)):

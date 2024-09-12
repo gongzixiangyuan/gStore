@@ -863,21 +863,6 @@ std::string GstoreConnector::funquery(std::string funInfo, std::string request_t
 	return res;
 }
 
-void GstoreConnector::fquery(std::string db_name, std::string format, std::string sparql, std::string filename, std::string request_type)
-{
-	if (request_type == "GET")
-	{
-		std::string strUrl = this->Url + "?operation=query&username=" + this->username + "&password=" + this->password + "&db_name=" + db_name + "&format=" + format + "&sparql=" + sparql;
-		int ret = this->Get(strUrl, filename);
-	}
-	else if (request_type == "POST")
-	{
-		std::string strPost = "{\"operation\": \"query\", \"username\": \"" + this->username + "\", \"password\": \"" + this->password + "\", \"db_name\": \"" + db_name + "\", \"format\": \"" + format + "\", \"sparql\": \"" + sparql + "\"}";
-		int ret = this->Post(this->Url, strPost, filename);
-	}
-	return;
-}
-
 std::string GstoreConnector::funcudb(std::string type, std::string funInfo, std::string request_type)
 {
 	std::string res;

@@ -43,14 +43,6 @@ void* MyThread_run(void* thread_args)
 	// query
 	string res = gc.query("lubm", "json", args->sparql, args->request_type);
 
-	// fquery
-	//gc.fquery("lubm", "json", args->sparql, args->filename, args->request_type);
-	//ifstream f(args->filename);
-	//stringstream buffer;
-	//buffer << f.rdbuf();
-	//string res = buffer.str();
-	//f.close();
-
 	//count the num
 	int m = 0;
 	for (int i = 0; i < args->sparql.length(); ++i)

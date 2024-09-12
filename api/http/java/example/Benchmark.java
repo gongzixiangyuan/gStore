@@ -36,22 +36,6 @@ class MyThread extends Thread {
 		GstoreConnector gc = new GstoreConnector(IP, Port, httpType, username, password);
 		String res = gc.query("lubm", "json", sparql, RequestType);
 
-		// fquery
-		/*GstoreConnector gc = new GstoreConnector(IP, Port, username, password);
-		gc.fquery("lubm", "json", sparql, filename, RequestType);
-		String res = "";      
-        FileInputStream in = null;
-        try {
-            in = new FileInputStream(filename);
-            int size = in.available();
-            byte[] buffer = new byte[size];
-            in.read(buffer);
-            in.close();
-            res = new String(buffer);
-        } catch (IOException e) {
-            System.out.println("error occurs: fail to open " + filename);
-        }*/
-
         // count the num
 		int m = 0;
 		for(int i = 0; i<sparql.length(); ++i)

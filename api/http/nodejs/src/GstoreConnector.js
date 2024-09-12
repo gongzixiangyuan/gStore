@@ -599,22 +599,6 @@ class GstoreConnector {
         }
     }
 
-    async fquery(db_name, format, sparql, filename, request_type = 'GET') 
-    {
-        if (request_type == 'GET')
-        {
-            const strUrl = "?operation=query&username=" + this.username + "&password=" + this.password + "&db_name=" + db_name + "&format=" + format + "&sparql=" + sparql + "&filename=" + filename;
-            const res = this.Get(strUrl);
-            return res;
-        }
-        else if (request_type == 'POST')
-        {
-            const strPost = '{\"operation\": \"query\", \"username\": \"' + this.username + '\", \"password\": \"' + this.password + '\", \"db_name\": \"' + db_name + '\", \"format\": \"' + format + '\", \"sparql\": \"' + sparql + '\", \"filename\": \"' + filename + '\"}';
-            const res = this.Post(strPost);
-            return res;
-        }
-    }
-
     async funcudb(type, funInfo, request_type = 'GET') 
     {
         if (request_type == 'GET')

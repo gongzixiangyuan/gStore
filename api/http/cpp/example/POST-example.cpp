@@ -82,9 +82,6 @@ int main(int argc, char* argv[])
 	res = gc.query("lubm", "json", sparql, "POST");
 	cout << res << endl;
 
-	// query and save the result in a file
-	gc.fquery("lubm", "json", sparql, filename, "POST");
-
 	// save the database if you have changed the database
 	res = gc.checkpoint("lubm", "POST");
 	cout << res << endl;

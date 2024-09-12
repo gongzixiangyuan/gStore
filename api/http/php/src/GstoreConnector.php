@@ -703,19 +703,5 @@ class GstoreConnector {
         $res = $this->Post($this->Url, $strPost);
         return $res;
     }
-
-    function fquery($db_name, $format, $sparql, $filename, $request_type="GET") {
-        if ($request_type == "GET")
-        {
-            $strUrl = $this->Url . "?operation=query&username=" . $this->username . "&password=" . $this->password . "&db_name=" . $db_name . "&format=" . $format . "&sparql=" . $sparql; 
-            $this->fGet($strUrl, $filename);
-        }
-        elseif ($request_type == "POST")
-        {
-            $strPost = "{\"operation\": \"query\", \"username\": \"" . $this->username . "\", \"password\": \"" . $this->password . "\", \"db_name\": \"" . $db_name . "\", \"format\": \"" . $format . "\", \"sparql\": \"" . $sparql . "\"}";
-            $this->fPost($this->Url, $strPost, $filename);
-        }
-        return;     
-    }
 }
 ?>

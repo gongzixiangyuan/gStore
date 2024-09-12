@@ -124,7 +124,6 @@ public:
 	std::string accesslog(std::string date, std::string pageNo, std::string pageSize, std::string request_type = "GET");
 	std::string addReason(std::string type, std::string db_name, std::string ruleinfo);
 	std::string reasonManage(std::string type, std::string db_name, std::string rulename = "");
-	void fquery(std::string db_name, std::string format, std::string sparql, std::string filename, std::string request_type = "GET");
 
 	void SetDebug(bool bDebug);
 

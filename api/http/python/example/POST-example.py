@@ -46,9 +46,6 @@ print(res)
 res = gc.query("lubm", "json", sparql, "POST")
 print(res)
 
-# query and save the result in a file
-gc.fquery("lubm", "json", sparql, filename, "POST")
-
 # save the database if you have changed the database
 res = gc.checkpoint("lubm", "POST")
 print(res)

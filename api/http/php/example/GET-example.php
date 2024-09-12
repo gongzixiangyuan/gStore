@@ -51,9 +51,6 @@ echo $res. PHP_EOL;
 $res = $gc->query("lubm", "json", $sparql);
 echo $res. PHP_EOL;
 
-// query and save the result in a file
-$gc->fquery("lubm", "json", $sparql, $filename);
-
 // save the database if you have changed the database
 $res = $gc->checkpoint("lubm");
 echo $res. PHP_EOL;

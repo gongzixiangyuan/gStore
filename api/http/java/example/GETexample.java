@@ -48,9 +48,6 @@ public class GETexample{
         res = gc.query("lubm", "json", sparql);
         System.out.println(res);
 
-		// query and save the result in a file
-        gc.fquery("lubm", "json", sparql, filename);
-
         // save the database if you have changed the database
 		res = gc.checkpoint("lubm");
 		System.out.println(res);

@@ -152,18 +152,6 @@ class GstoreConnector:
         }
         return self.request[request_type](query_params)
 
-    def fquery(self, db_name, format, sparql, filename, request_type='GET'):
-        query_params = {
-            **self.auth_params,
-            'operation': 'fquery',
-            'db_name': db_name,
-            'format': format,
-            'sparql': sparql
-        }
-        r = self.request[request_type](query_params, stream=True)
-        self.save(filename, r)
-        return
-
     def exportDB(self, db_name, db_path, request_type='GET'):
         query_params = {
             **self.auth_params,

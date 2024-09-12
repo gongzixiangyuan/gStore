@@ -39,16 +39,6 @@ class Mythread extends Thread {
         $gc = new GstoreConnector("127.0.0.1", 9000, "ghttp", "root", "123456");
         $res = $gc->query("lubm", "json", $this->sparql, $this->RequestType);
 
-        // fquery
-        //$gc = new GstoreConnector("127.0.0.1", 9000, "root", "123456");
-        //$gc->fquery("lubm", "json", $this->sparql, $this->filename, $this->RequestType);
-        //$f = fopen($this->filename, "r") or exit("fail to open " . $this->filename);
-        //$res = "";
-        //while(!feof($f)) {
-        //    $res .= (fgets($f). PHP_EOL);
-        //}
-        //fclose($f);
-
         // count the num
         $m = 0;
         for ($i = 0; $i < strlen($this->sparql); $i++) {
