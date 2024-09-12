@@ -3641,13 +3641,6 @@ To use the C++ API, put the phrase `'#include "client.h"` in your CPP code, as s
 	Parameter Definition：[Request types "GET" and "POST" can be omitted if the request type is "GET"]
 	Example：gc.getAPIVersion();
 
-**Query the database and save the file: fquery**
-
-	void fquery(std::string db_name, std::string format, std::string sparql, std::string filename, std::string request_type);
-	Function：Query the database and save the results to a file
-	Parameter Definition：[database name], [query result type JSON, HTML or text], [SPARQL statement], [file name], [request type "GET" and "POST ", if the request type is "GET", it can be omitted]
-	Example：gc.fquery("lubm", "json", sparql, "ans.txt");
-
 **Exporting the Database**
 
 	std::string exportDB(std::string db_name, std::string dir_path, std::string request_type);
@@ -3752,10 +3745,6 @@ Example：GstoreConnector gc = new GstoreConnector("127.0.0.1", 9000, "ghttp",
 
 	public String getAPIVersion(String request_type);Function：Get API version Parameter：[Request types "GET" and "POST" can be omitted if the request type is "GET"]Example：gc.getAPIVersion();
 
-**Query the database and save the file: fquery**
-
-	public void fquery(String db_name, String format, String sparql, String filename, String request_type);Function：Query the database and save the result to a file Parameter definition：[database name], [query result type JSON, HTML or text], [SPARQL statement], [file name]，[Request types "GET" and "POST" can be omitted if the request type is "GET"]Example：gc.fquery("lubm", "json", sparql, "ans.txt");
-
 **Export database**
 
 	public String exportDB(String db_name, String dir_path, String request_type);Function：Export database to parameter definition under file folder：[database name], [database export folder path]，[Request types "GET" and "POST" can be omitted if the request type is "GET"】Example：gc.exportDB("lubm", "/root/gStore/");
@@ -3853,11 +3842,6 @@ Example：gc = GstoreConnector.GstoreConnector("127.0.0.1", 9000, "ghttp", "root
 
 	def getAPIVersion(self, request_type):Function：Get the API version information parameter definition：[Request types "GET" and "POST" can be omitted if the request type is "GET"]
 	Example：res = gc.getAPIVersion()
-
-**Query the database and save the file: fquery**
-
-	def fquery(self, db_name, format, sparql, filename, request_type):Function：Query the database and save the result to a file Parameter definition：[database name], [query result type JSON, HTML or text], [SPARQL statement], [file name]，[Request types "GET" and "POST" can be omitted if the request type is "GET"]
-	Example：gc.fquery("lubm", "json", sparql, "ans.txt")
 
 **Export databse**
 
@@ -3957,13 +3941,6 @@ To use Nodejs API, please refer to the `gStore/API/http/Nodejs/GstoreConnector.j
 	Function：Get the API version information	
 	Parameter definition：[Request types "GET" and "POST" can be omitted if the request type is "GET"]
 	Example：res = gc.getAPIVersion();
-
-**Query the database and save the file: fquery**
-
-	async fquery(db_name = '', format = '' , sparql = '' , filename = '' , request_type);
-	Function：Query the database and save the results to a file
-	Parameter definition：[database name], [query result type JSON, HTML or text], [SPARQL statement], [file name],  [Request types "GET" and "POST" can be omitted if the Request type is "GET"]
-	Example：gc.fquery("lubm", "json", sparql, "ans.txt");
 
 **Export database**
 
@@ -4084,13 +4061,6 @@ Example：$gc = new GstoreConnector("127.0.0.1", 9000, "ghttp", "root", "123456"
 	Example：
 	$res = $gc->getAPIVersion();
 	echo $res. PHP_EOL;
-
-**Query the database and save the file：fquery**
-
-	function fquery($db_name, $format, $sparql, $filename, $request_type)
-	Function：Query the database and save the results to a file
-	Parameter definition：[database name], [query result type JSON, HTML or text], [SPARQL statement], [file name],[Request types "GET" and "POST" can be omitted if the request type is "GET"]
-	Example：$gc->fquery("lubm", "json", $sparql, "ans.txt");
 
 **Export database**
 

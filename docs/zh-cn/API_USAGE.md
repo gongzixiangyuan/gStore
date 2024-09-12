@@ -3698,13 +3698,6 @@ http://ip:9000/
 	参数含义：[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
 	使用示例：gc.getAPIVersion();
 
-**查询数据库并保存文件：fquery**
-
-	void fquery(std::string db_name, std::string format, std::string sparql, std::string filename, std::string request_type);
-	功能：查询数据库并保留结果到文件
-	参数含义：[数据库名称]，[查询结果类型json,html或text]，[sparql语句]，[文件名称]，[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
-	使用示例：gc.fquery("lubm", "json", sparql, "ans.txt");
-
 **导出数据库**
 
 	std::string exportDB(std::string db_name, std::string dir_path, std::string request_type);
@@ -3816,13 +3809,6 @@ http://ip:9000/
 	功能：得到API版本信息
 	参数含义：[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
 	使用示例：gc.getAPIVersion();
-
-**查询数据库并保存文件：fquery**
-
-	public void fquery(String db_name, String format, String sparql, String filename, String request_type);
-	功能：查询数据库并保留结果到文件
-	参数含义：[数据库名称]，[查询结果类型json,html或text]，[sparql语句]，[文件名称]，[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
-	使用示例：gc.fquery("lubm", "json", sparql, "ans.txt");
 
 **导出数据库**
 
@@ -3957,7 +3943,7 @@ http://ip:9000/
 	def tquery(self, db_name, tid, sparql, request_type='GET'):
 	功能：执行事务类型的查询
 	参数含义：[数据库名称]，[事务id]，[sparql语句]，[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
-	使用示例：gc.fquery("lubm", "1", sparql)
+	使用示例：gc.tquery("lubm", "1", sparql)
 
 **提交事务: commit**
 
@@ -4099,13 +4085,6 @@ http://ip:9000/
 	参数含义：[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
 	使用示例：res = gc.getAPIVersion();
 
-**查询数据库并保存文件：fquery**
-
-	async fquery(db_name = '', format = '' , sparql = '' , filename = '' , request_type);
-	功能：查询数据库并保留结果到文件
-	参数含义：[数据库名称]，[查询结果类型json,html或text]，[sparql语句]，[文件名称]，[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
-	使用示例：gc.fquery("lubm", "json", sparql, "ans.txt");
-
 **导出数据库**
 
 	async exportDB(db_name = '' , dir_path = '' , request_type); 
@@ -4231,13 +4210,6 @@ http://ip:9000/
 	使用示例：
 	$res = $gc->getAPIVersion();
 	echo $res. PHP_EOL;
-
-**查询数据库并保存文件：fquery**
-
-	function fquery($db_name, $format, $sparql, $filename, $request_type)
-	功能：查询数据库并保留结果到文件
-	参数含义：[数据库名称]，[查询结果类型json,html或text]，[sparql语句]，[文件名称]，[请求类型"GET"和"post",如果请求类型为“GET”，则可以省略]
-	使用示例：$gc->fquery("lubm", "json", $sparql, "ans.txt");
 
 **导出数据库**
 
