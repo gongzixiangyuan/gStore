@@ -2,12 +2,13 @@
 """
 # Filename: GET-example.py
 # Author: suxunbin
-# Last Modified: 2019-5-15 18:26
+# Last Modified: 2024/9/18 10:09
 # Description: a simple GET-example of python API
 """
 import sys
 sys.path.append('../src')
 import GstoreConnector
+import json
 
 # before you run this example, make sure that you have started up ghttp service (using bin/ghttp port)
 # "GET" is a default parameter that can be omitted
@@ -30,6 +31,24 @@ filename = "res.txt"
 
 # start a gc with given IP, Port, username and password
 gc =  GstoreConnector.GstoreConnector(IP, Port, username, password, http_type=httpType)
+
+# // check
+res = gc.check()
+print(res)
+
+# // login
+res = gc.login()
+print(res)
+
+# // query version
+res = gc.getCoreVersion()
+print(res)
+
+res = gc.check()
+print(res)
+
+res = gc.stat()
+print(res)
 
 # build a database with a RDF graph
 res = gc.build("lubm", "data/lubm/lubm.nt")
@@ -63,12 +82,49 @@ print(res)
 res = gc.exportDB("lubm", "export/lubm/get")
 print(res)
 
+# insert nt
+res = gc.batchInsert("lubm", "data/bbug/bbug.nt");
+print(res)
+
+try:
+    res = json.loads(res)
+    if res["opt_id"]:
+        res = gc.checkOperationState(res["opt_id"])
+        print(res)
+except Exception as e:
+    print(e)
+
+# user mange
+#  show
+res = gc.showuser()
+print(res)
+
+# add
+res = gc.usermanage("1", "test", "123456")
+print(res)
+
+# set user privile
+res = gc.userprivilegemanage("1", "test", "1,2,3", "lubm")
+print(res)
+
+# clean user privile
+res = gc.userprivilegemanage("3", "test")
+print(res)
+
+# update user password
+res = gc.userpassword("test", "123456", "111111")
+print(res)
+
+# delete user
+res = gc.usermanage("2", "test")
+print(res)
+
 # unload the database
 res = gc.unload("lubm")
-print(res);
+print(res)
 
 # drop the database
 res = gc.drop("lubm", False) #delete the database directly
 #res = gc.drop("lubm", True) #leave a backup
-print(res);
+print(res)
 
